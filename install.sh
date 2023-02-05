@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tput setaf 2;
-cat web/art/reNgine.txt
+cat web/art/1.1.txt
 
 tput setaf 1; echo "Before running this script, please make sure Docker is running and you have made changes to .env file."
 tput setaf 2; echo "Changing the postgres username & password from .env is highly recommended."
@@ -59,22 +59,6 @@ else
   curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
   tput setaf 2; echo "Docker installed!!!"
 fi
-
-
-echo " "
-tput setaf 4;
-echo "#########################################################################"
-echo "Installing docker-compose"
-echo "#########################################################################"
-if [ -x "$(command -v docker-compose)" ]; then
-  tput setaf 2; echo "docker-compose already installed, skipping."
-else
-  curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-  tput setaf 2; echo "docker-compose installed!!!"
-fi
-
 
 echo " "
 tput setaf 4;
